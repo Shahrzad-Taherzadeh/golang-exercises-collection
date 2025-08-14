@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"strconv"
 )
 
 func main(){
@@ -22,10 +23,16 @@ func main(){
 	fmt.Println("Enter your ID number => ")
 	fmt.Scanln(&idNumber)
 
-	_, ok :=  informationValue[idNumber]
+	person, ok :=  informationValue[idNumber]
 	if ok{
-		fmt.Println("Exist")
+		fmt.Println(".............................")
+		ageString := strconv.Itoa(person.age)
+		fmt.Printf("The student with name: %s and age: %s\n", person.name, ageString)
+		fmt.Println(".............................")
 	}else{
-		fmt.Println("Not found")
+		fmt.Println("...Not found...")
 	}
+
+	
+	
 }
